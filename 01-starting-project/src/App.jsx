@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './components/Header.jsx';
+import Header from './components/Header/Header.jsx';
 import {CORE_CONCEPTS} from './data.js';
-import CoreConcept from './components/CoreConcept.jsx';
+import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
 function App() {
   return (
     <div>

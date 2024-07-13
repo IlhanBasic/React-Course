@@ -1,5 +1,6 @@
 import React from 'react';
-import coreImage from '../assets/react-core-concepts.png';
+import coreImage from '../../assets/react-core-concepts.png';
+import './CoreConcept.css';
 export default function CoreConcept ({image,title,description}){
     return (
       <li>
