@@ -1,12 +1,14 @@
 import React from 'react';
+import {useState} from 'react';
 import Header from './components/Header/Header.jsx';
 import {CORE_CONCEPTS} from './data.js';
 import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
 import TabButton from './components/TabButton/TabButton.jsx'
 
 function App(){
+  const [Counter,setCounter] = useState('Please click a button');
  function handleSelect(clickedButton){
-    console.log(clickedButton);
+    setCounter(clickedButton);
  }
   return (
     <div>
@@ -29,7 +31,7 @@ function App(){
             <TabButton onSelect={()=>handleSelect('Props')}>Props</TabButton>
             <TabButton onSelect={()=>handleSelect('States')}>States</TabButton>
           </menu>
-          Kontent
+          {Counter}
         </section>
 
       </main>
