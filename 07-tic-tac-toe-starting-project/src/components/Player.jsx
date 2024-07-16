@@ -1,10 +1,10 @@
 import { useState } from "react";
-export default function Player({initialName,symbol}){
+export default function Player({initialName,symbol,isActive}){
     const [playerName,setPlayerName] = useState(initialName);
     const [isEditing,setIsEditing] = useState(false);
     //funkcija za azuriranje UI
     function handleEditClick(){
-        setIsEditing(!isEditing);
+        setIsEditing(editing=>!editing);
     }
     function handleChange(event){
         setPlayerName(event.target.value);
@@ -16,7 +16,7 @@ export default function Player({initialName,symbol}){
         editablePlayerName = <input type="text" required value={playerName} onChange={handleChange}/>;
     }
     return (
-        <li>
+        <li className={isActive?'active':undefined}>
             <span className="player">
                 {editablePlayerName}
                 <span className="player-symbol">{symbol}</span>
