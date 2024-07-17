@@ -17,7 +17,7 @@ function App() {
       }
     });
   }
-  const isValidInput = userInput.duration <= 0 && userInput.duration;
+  const isValidInput = userInput.duration <= 0;
   return (
     <>
       <Header />
