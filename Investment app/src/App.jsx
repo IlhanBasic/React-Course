@@ -17,15 +17,15 @@ function App() {
       }
     });
   }
-  const isValidInput = userInput.duration <= 0 && userInput.duration;
+  const isValidInput = userInput.duration <= 0;
   return (
     <>
-    <Header/>
-    <UserInput userInput={userInput} onChange={handleChange}/>
+      <Header />
+      <UserInput userInput={userInput} onChange={handleChange}/>
       {isValidInput && <p className="center">Please enter value which is more than 0 and less than 100</p> }
       {!isValidInput && <Results userInput={userInput}/>}
     </>
-    
+
   )
 }
 
