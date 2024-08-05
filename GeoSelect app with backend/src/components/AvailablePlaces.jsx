@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Places from './Places.jsx';
 import Error from './Error.jsx';
+import { fetchAvailablePlaces } from '../http.js';
+import { sortPlacesByDistance } from '../loc.js';
 
 export default function AvailablePlaces({ onSelectPlace }) {
   const [isFetching, setIsFetching] = useState(false);
@@ -11,20 +13,21 @@ export default function AvailablePlaces({ onSelectPlace }) {
     async function fetchPlaces() {
       setIsFetching(true);
       try {
-        const response = await fetch('http://localhost:3000/places');
-        const resData = await response.json();
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch places');
-        }
-
-        setAvailablePlaces(resData.places);
+        const places = await fetchAvailablePlaces();
+        navigator.geolocation.getCurrentPosition((position) => {
+          const sortedPlaces = sortPlacesByDistance(
+            places,
+            position.coords.latitude,
+            position.coords.longitude
+          );
+          setAvailablePlaces(sortedPlaces);  
+          setIsFetching(false);
+        });
       } catch (error) {
         setError({
           message: error.message || "Could not fetch places, please try again later..."
         });
-      } finally {
-        setIsFetching(false); // Uvijek postavi na false na kraju
+        setIsFetching(false);
       }
     }
 
