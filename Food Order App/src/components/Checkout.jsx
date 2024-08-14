@@ -1,0 +1,26 @@
+import Modal from "./UI/Modal";
+import { currencyFormatter } from "../formatting";
+import Input from "./UI/Input";
+export default function Checkout(){
+    const cartTotal = cartCtx.items.reduce(
+        (totalPrice, item) => totalPrice + item.quantity * item.price,
+        0
+      );
+    return <Modal>
+        <form>
+            <h2>Checkout</h2>
+            <p>Total price : {currencyFormatter.format(cartTotal)}/</p>
+            <Input label="Full Name" type="text" id="full-name"/>
+            <Input label="Email" type="email" id="email"/>
+            <Input label="Street" type="text" id="street"/>
+            <div className="control-row">
+                <Input label="Postal code" type="text" id="postal-code"/>
+                <Input label="City" type="text" id="city"/>
+            </div>
+            <p className="modal-actions">
+                <Button type="button" textOnly>Close</Button>
+                <Button>Submit Order</Button>
+            </p>
+        </form>
+    </Modal>
+}
