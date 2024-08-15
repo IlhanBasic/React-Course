@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "items": [
+      {
+        "id": "m1",
+        "name": "Mac & Cheese",
+        "price": "8.99",
+        "description": "Creamy cheddar cheese mixed with perfectly cooked macaroni, topped with crispy breadcrumbs. A classic comfort food.",
+        "image": "images/mac-and-cheese.jpg",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "Sead Memovic",
+      "email": "memovicsead95@gmail.com",
+      "street": "Fridrih Johansen",
+      "postal-code": "9010",
+      "city": "Klagenfurt"
+    },
+    "id": "250.45112184786177"
+  },
+  {
+    "items": [
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "Sead Memovic",
+      "email": "memovicsead95@gmail.com",
+      "street": "Fridrih Johansen",
+      "postal-code": "9010",
+      "city": "Klagenfurt"
+    },
+    "id": "778.5394543917535"
+  }
+]
