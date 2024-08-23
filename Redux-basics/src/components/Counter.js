@@ -15,8 +15,8 @@ const Counter = () => {
   function handleDecrement() {
     dispatch(counterActions.decrement());
   }
-  const counter = useSelector((state) => state.counter);
-  const showCounter = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const showCounter = useSelector((state) => state.counter.showCounter);
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
