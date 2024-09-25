@@ -1,4 +1,10 @@
-function HomePage(){
-    return <h1>Hello</h1>
+import { Link } from "react-router-dom";
+function HomePage() {
+  return (
+    <>
+      <h1>Hello from Home</h1>
+      <p>Go to <Link to='/products'>products</Link></p>
+    </>
+  );
 }
 export default HomePage;
