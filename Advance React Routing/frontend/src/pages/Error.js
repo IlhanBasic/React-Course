@@ -6,7 +6,7 @@ function ErrorPage(){
     let title = 'An error occurred !';
     let content = 'Something went wrong !';
     if(error.status===500){
-        content = JSON.parse(error.data).message;
+        content = error.data.message;
     }
     if(error.status===404){
         title="404 Error"
