@@ -91,8 +91,7 @@ export async function action({ request, params }) {
     description: data.get("description"),
   };
   let url = "http://localhost:8080/events";
-  
-  // Ispravi URL za PATCH zahtev
+
   if (method === "PATCH") {
     url = `http://localhost:8080/events/${params.eventsId}`;
   }
